@@ -88,11 +88,41 @@
 		text-align: center;
 	}
 	
+	ul{
+		list-style-type: none;
+		margin:0;
+		padding: 0;
+		overflow: hidden;
+		text-align: center;
+		background-color: #0B2161;
+	}
+	
+	li{
+		display:inline-block;
+		width: 570px;
+		font-size: 15px;
+	}
+	
+	li a{
+		display: block;
+		color: #FFFFFF;
+		border-width: 50px;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+	
+	li a:hover{
+		color: #FFFFFF;
+		background-color: #084B8A;
+	}
+	
 </style>
 </head>
 <body>
 <br>
 <div class='container'>
+
+<!-- 상단 메뉴  -->
 	<div class='area'>
 		<div class='top_menu'>
 			<a href='./user/login.jsp'>로그인</a> <span>|</span>
@@ -104,17 +134,19 @@
 	</div>
 	<br><br>
 	
+	<!-- 로고 -->
 	<div class='logo'>
 		<a href='main.jsp'>로고 이미지</a>
 	</div>
 	<br>
 	
-	<div class='btn-group btn-group-justified'>
-		<a href=# class='btn btn-info' onClick="location.href='#'">국내 도서</a>
-		<a href=# class='btn btn-info' onClick="location.href='#'">해외 도서</a>
-	</div>
-	<br>
+	<!-- 도서 메뉴 -->
+	<ul id='nav'>
+			<li><a href='./book/01.html'>국내도서</a>
+			<li><a href='./book/01.html'>해외도서</a>
+	</ul>
 	
+	<!-- 베스트셀러  -->
 	<div id='carousel' class='carousel slide' data-ride='carousel'>
 		<ol class='carousel-indicators'>
 			<li data-target='#carousel' data-slide-to='0' class='active'></li>
@@ -145,17 +177,60 @@
 	</div>
 	<br><br>
 	
-	<div class='recommand'>
-		<p><strong>이 달의 추천도서</strong></p>
-	</div>
 	
-	<div class='recommandBook'>
-		<div class='image'>책 이미지</div>
-		<div class='image'>책 이미지</div>
-		<div class='image'>책 이미지</div>
+	<!-- 추천도서 -->
+	<div>
+		<h3 style='text-align:center;'><strong>이 달의 추천도서</strong></h3>
 	</div>
-	<br><br>
+	<br>
 	
+	<div class="container center-block text-center">
+	  	<div class="row">
+	     	<div class="col-sm-3 col-md-3">
+	        	<div class="thumbnail">
+           			<a href="./books/01.html" class="thumbnail" style="height: 150px;"> </a>
+	       			<div class="caption">
+	          			<h5>JSP 2.3웹프로그래밍 기초부터 중급까지</h5>
+	          			<h6>27,000원</h6>
+	          			<p>쌍용 출판사</p>
+	       			</div>
+	 			</div>
+	 		</div>
+	 		<div class="col-sm-3 col-md-3">
+	        	<div class="thumbnail">
+           			<a href="./books/01.html" class="thumbnail" style="height: 150px;"> </a>
+	       			<div class="caption">
+	          			<h5>JSP 2.3웹프로그래밍 기초부터 중급까지</h5>
+	          			<h6>27,000원</h6>
+	          			<p>쌍용 출판사</p>
+	       			</div>
+	 			</div>
+	 		</div>
+		 	<div class="col-sm-3 col-md-3">
+	        	<div class="thumbnail">
+           			<a href="./books/01.html" class="thumbnail" style="height: 150px;"> </a>
+	       			<div class="caption">
+	          			<h5>JSP 2.3웹프로그래밍 기초부터 중급까지</h5>
+	          			<h6>27,000원</h6>
+	          			<p>쌍용 출판사</p>
+	       			</div>
+	 			</div>
+	 		</div>
+	 		<div class="col-sm-3 col-md-3">
+	        	<div class="thumbnail">
+           			<a href="./books/01.html" class="thumbnail" style="height: 150px;"> </a>
+	       			<div class="caption">
+	          			<h5>JSP 2.3웹프로그래밍 기초부터 중급까지</h5>
+	          			<h6>27,000원</h6>
+	          			<p>쌍용 출판사</p>
+	       			</div>
+	 			</div>
+	 		</div>
+	 	</div>
+	</div>
+	<br><br><br><hr>
+	
+	<!-- 하단 footer -->
 	<footer class='footer'>
 		<hr style='border:1px solid silver;' width='90%'>
 		<table>

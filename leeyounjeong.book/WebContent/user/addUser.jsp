@@ -18,6 +18,53 @@
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var roadAddr = data.roadAddress;
+                var extraRoadAddr = '';
+                
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+                
+                document.getElementById('sample4_postcode').value = data.zonecode;
+                document.getElementById("sample4_roadAddress").value = roadAddr;
+                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                
+                if(roadAddr !== ''){
+                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                } else {
+                    document.getElementById("sample4_extraAddress").value = '';
+                }
+
+                var guideTextBox = document.getElementById("guide");
+                
+                if(data.autoRoadAddress) {
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                    guideTextBox.style.display = 'block';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();      
+    }
+</script>
 <style>
 	.logo{
 		text-align: center;
@@ -34,9 +81,27 @@
 		display: inline;
 		text-align: right;
 	}
-
-	.number input{
-		width: 55px;
+	
+	.title{
+	   padding: 10 0 0 10px;
+	   border-bottom: 1.5px solid #0B2161;
+	   letter-spacing: -0.07em
+	}
+	
+	h1{
+	   font-size: 32px;
+	   padding-left: 20px;
+	   color: #000;
+	   line-height: 1;
+	   font-family: 'Montserrat', 'Noto Sans KR', Verdana, Dotum, AppleGothic, sans-serif;
+	}
+	
+	.title span{
+	   font-size: 21px;
+	   color: #d2d2d2;
+	   font-weight: 500;
+	   letter-spacing: 0em;
+	   margin-left: 3px;
 	}
 	
 	table{
@@ -55,6 +120,21 @@
 		border-bottom: 10px solid #fff;
 	}
 	
+	#userid, #sample4_postcode {
+		width: 50%;
+		display:inline-block; 
+		margin-right:15px;	
+	}
+	
+	.form-control{
+		width: 50%;
+	}
+	
+	th{
+		padding-right: 15px;
+		padding: 10px 7px;
+	}
+	
 	h3{
 		margin-left: 100px;
 	}
@@ -63,6 +143,10 @@
 		margin-bottom: 8px;
 	}
 	
+	.sign{
+		display:inline-block;
+		margin: 0px 0px 0px 150px;
+	}
 </style>
 <body>
 <div class='container'>
@@ -80,13 +164,15 @@
 	<div class='logo'>
 		<a href='../main.jsp'>로고 이미지</a>
 	</div>
-	<hr>
-	
-	<div >
-		<h3>회원가입</h3>
-	</div>
-	<hr style='border:1px solid silver;' width='90%'>
-	<br>
+
+	<!-- header -->
+	<div class='title'>
+		<a href='#' style="text-decoration:none">
+			<h1>회원가입
+			<span>Sign Up</span>
+			</h1>
+		</a>
+	</div> <br><br>
 <%
 		String a = request.getParameter("msg");
 		if(a == null) a = "";
@@ -96,23 +182,23 @@
 			<table class='sign'>
 				<tr class='text'>
 					<th>아이디<span>(*)</span></th>
-					<td><input type='text' name="userId" required/>&nbsp;<%= a %></td>
+					<td><input type='text' class="form-control" name="userId" placeholder="아이디를 입력하세요." required/>&nbsp;<%= a %></td>
 				</tr>
 				
 				<tr class='text'>
 					<th>이름<span>(*)</span></th>
-					<td><input type='text' name="userName" required/></td>
+					<td><input type='text' class="form-control" placeholder="사용자 이름을 입력하세요." name="userName" required/></td>
 				</tr>
 				
 				<tr class='text'>
 					<th>비밀번호<span>(*)</span></th>
-					<td><input type='password' name="userPwd" required/></td>
+					<td><input type='password' class="form-control" placeholder="비밀번호를 입력하세요." name="userPwd" required/></td>
 				</tr>
 			
 				<tr class='number'>
 					<th>휴대폰 번호<span>(*)</span></th>
 					<td>
-						<input type='text' name="phoneNum" size="15" style="width: 150px;" required/>
+						<input type='text' name="phoneNum" class="form-control onlyNumber" placeholder="-를 포함하여 번호를 입력하세요."  required/>
 					</td>
 				</tr>
 				

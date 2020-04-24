@@ -66,6 +66,28 @@
 		margin: auto;
 		text-align: center;
 	}
+	
+	.title{
+	   padding: 10 0 0 10px;
+	   border-bottom: 1.5px solid #0B2161;
+	   letter-spacing: -0.07em
+	}
+	
+	h1{
+	   font-size: 32px;
+	   padding-left: 20px;
+	   color: #000;
+	   line-height: 1;
+	   font-family: 'Montserrat', 'Noto Sans KR', Verdana, Dotum, AppleGothic, sans-serif;
+	}
+	
+	.title span{
+	   font-size: 21px;
+	   color: #d2d2d2;
+	   font-weight: 500;
+	   letter-spacing: 0em;
+	   margin-left: 3px;
+	}
 </style>
 <body>
 <br>
@@ -84,11 +106,16 @@
 	<div class='logo'>
 		<a href='../main.jsp'>로고 이미지</a>
 	</div>
-	<hr>
+
+	<!-- header -->
+	<div class='title'>
+		<a href='#' style="text-decoration:none">
+			<h1>로그인
+			<span>Login</span>
+			</h1>
+		</a>
+	</div> <br><br>
 	
-	<div>
-		<h3>Login</h3>
-	</div>
 	<hr style='border:0.5px solid silver;' width='90%'>
 	<br><br>
 	
@@ -99,10 +126,10 @@
 		
 			<p><input type='text' name="userId" id='id' placeholder='아이디' size=30></p>
 			<p><input type='password' name="userPwd" id='pwd'  placeholder='비밀번호' size=30 ></p>
-			
-			<p><button type='submit' class='btn btn-info' style='width: 220pt' onClick="location.href='longinProc.jsp'">로그인</button></p>
-			<button type='button' class='btn btn-success'style='width: 220pt'  onClick="location.href='addUser.jsp'">회원가입</button>
-			
+			<div class='button'>
+				<p><button type='submit' class='btn btn-info' style='width: 220pt' onClick="location.href='longinProc.jsp'">로그인</button></p>
+				<button type='button' class='btn btn-success'style='width: 220pt'  onClick="location.href='addUser.jsp'">회원가입</button>
+			</div>
 		</form>
 	</div>
 	<br><br><br>
