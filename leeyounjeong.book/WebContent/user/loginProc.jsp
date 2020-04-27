@@ -39,7 +39,7 @@
 		case 2:
 			if(userId.equals("admin")){
 %>			
-				<c:redirect url="../admin/main.html"/>
+				<c:redirect url="../admin/main.jsp"/>
 <%				
 			}else{
 %>
