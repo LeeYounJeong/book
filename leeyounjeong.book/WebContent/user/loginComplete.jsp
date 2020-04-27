@@ -121,9 +121,10 @@
 <div class='container'>
 	<div class='area'>
 		<div class='top_menu'>
+			<!-- <h5>session.getAttribute("LoginId") %>님, 환영합니다 !</h5> -->
 			<h5>${LoginId}님, 환영합니다 !</h5>
 			<a href='../user/logoutProc.jsp'>로그아웃</a> <span>|</span>
-			<a href='#'>마이페이지</a> <span>|</span>
+			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
 			<a href='#'>고객센터</a> 
 		</div>
