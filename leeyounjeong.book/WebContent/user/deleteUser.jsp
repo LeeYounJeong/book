@@ -4,24 +4,6 @@
 <%@ page import="leeyounjeong.book.user.service.UserService" %>
 <%@ page import="leeyounjeong.book.user.service.UserServiceImpl" %>
 <%@ page import="leeyounjeong.book.user.domain.User" %>
-<!-- 
-<script>
-function alert_out() {
-	swal({
-		title : "탈퇴하시겠습니까?",
-		type : "success",
-		showCancelButton : true,
-		cancelButtonText : "아니오",
-		confirmButtonText : "예",
-		closeOnConfirm : false
-	}, function(isConfirm) {
-		if (isConfirm) {
-			location.href = 'delUserProc.jsp';
-		}
-	});
-}
-</script>
- -->
 <%
 	request.setCharacterEncoding("utf-8");
 	UserService userService = new UserServiceImpl();
@@ -32,7 +14,7 @@ function alert_out() {
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<title>탈퇴</title>
+<title>BoB</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -143,7 +125,7 @@ h1{
 			<a href='../main.jsp'>로그아웃</a> <span>|</span>
 			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
-			<a href='#'>고객센터</a> 
+			<a href='../qa/list.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>

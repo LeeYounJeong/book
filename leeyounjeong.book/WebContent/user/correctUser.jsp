@@ -68,49 +68,6 @@
         }).open();      
     }
 </script>
-<!-- 
-<script>
-function alert_mod1() {
-	swal({
-		title : "수정하시겠습니까?",
-		type : "info",
-		showCancelButton : true,
-		cancelButtonText : "아니오",
-		confirmButtonText : "예",
-		closeOnConfirm : false
-	}, function() {
-		swal("이름 수정", "수정되었습니다", 'success');
-	});
-}
-
-function alert_mod2() {
-	swal({
-		title : "수정하시겠습니까?",
-		type : "info",
-		showCancelButton : true,
-		cancelButtonText : "아니오",
-		confirmButtonText : "예",
-		closeOnConfirm : false
-	}, function() {
-		swal("비밀번호 수정", "수정되었습니다", 'success');
-	});
-}
-
-function alert_mod3() {
-	swal({
-		title : "수정 성공",
-		type : "success",
-		showCancelButton : false,
-		cancelButtonText : "아니오",
-		confirmButtonText : "예",
-		closeOnConfirm : true
-	}, function(isConfirm) {
-		if (isConfirm) {
-			location.href = '../mypage/01.html';
-		}
-	});
-}
-</script>-->
 <style>
 	.logo{
 		text-align: center;
@@ -202,8 +159,8 @@ function alert_mod3() {
 				<h5><%= session.getAttribute("LoginId") %>님, 환영합니다 !</h5>
 				<a href='../main.jsp'>로그아웃</a> <span>|</span>
 				<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
-				<a href='../cart/01.html'>장바구니</a> <span>|</span>
-				<a href='../qa/02.html'>고객센터</a> 
+				<a href='#'>장바구니</a> <span>|</span>
+				<a href='../qa/list.jsp'>고객센터</a> 
 			</div>
 		</div>
 		<br><br>
@@ -215,7 +172,7 @@ function alert_mod3() {
 
  <!-- header -->
    <div class='title'>
-      <a href='myPage.html' style="text-decoration:none">
+      <a href='#' style="text-decoration:none">
 	      <h1>회원수정
 	      <span>Update</span>
 	      </h1>

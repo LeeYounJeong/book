@@ -126,13 +126,13 @@
 			<a href='../user/logoutProc.jsp'>로그아웃</a> <span>|</span>
 			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
-			<a href='#'>고객센터</a> 
+			<a href='../qa/list.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>
 	
 	<div class='logo'>
-		<a href='../main.jsp'>로고 이미지</a>
+		<a href='loginComplete.jsp'>로고 이미지</a>
 	</div>
 	<br>
 	

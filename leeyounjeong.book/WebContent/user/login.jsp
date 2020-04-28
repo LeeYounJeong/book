@@ -105,7 +105,7 @@
 			<a href='addUser.jsp'>회원가입</a> <span>|</span>
 			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
-			<a href='#'>고객센터</a> 
+			<a href='../qa/list.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>

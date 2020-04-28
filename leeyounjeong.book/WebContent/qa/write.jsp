@@ -12,24 +12,6 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<script>
-/*
-function alert_register() {
-	swal({
-		title : "등록하시겠습니까?",
-		type : "info",
-		showCancelButton : true,
-		cancelButtonText : "아니오",
-		confirmButtonText : "예",
-		closeOnConfirm : false
-	}, function(isConfirm) {
-		if (isConfirm) {
-			location.href = 'list.jsp';
-		}
-	});
-}
-*/
-</script>
 <head>
 <title>게시판</title>
 </head>

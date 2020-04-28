@@ -4,7 +4,8 @@
 <configuration>
 	<properties resource="leeyounjeong/book/config/jdbc.properties"/> 
 	<typeAliases>
-		<typeAlias alias="user" type="leeyounjeong.book.user.domain.User" /> 
+		<typeAlias alias="user" type="leeyounjeong.book.user.domain.User" />
+		<typeAlias alias="qa" type="leeyounjeong.book.qa.domain.Qa" /> 
 	</typeAliases>
 	
 	<environments default="development"> 
@@ -21,5 +22,6 @@
 	
 	<mappers> 
 		<mapper resource="leeyounjeong/book/user/dao/map/userMap.xml" />	
+		<mapper resource="leeyounjeong/book/qa/dao/map/qaMap.xml" />
 	</mappers>
 </configuration>	

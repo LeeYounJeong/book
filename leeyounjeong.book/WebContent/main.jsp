@@ -127,9 +127,9 @@
 		<div class='top_menu'>
 			<a href='./user/login.jsp'>로그인</a> <span>|</span>
 			<a href='./user/addUser.jsp'>회원가입</a> <span>|</span>
-			<a href='#'>마이페이지</a> <span>|</span>
+			<a href='main.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
-			<a href='#'>고객센터</a> 
+			<a href='main.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>

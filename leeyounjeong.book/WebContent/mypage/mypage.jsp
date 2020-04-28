@@ -104,8 +104,8 @@ h1{
 			<h5><%= session.getAttribute("LoginId") %>님, 환영합니다 !</h5>
 			<a href='../main.jsp'>로그아웃</a> <span>|</span>
 			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
-			<a href='../cart/01.html'>장바구니</a> <span>|</span>
-			<a href='../qa/02.html'>고객센터</a> 
+			<a href='#'>장바구니</a> <span>|</span>
+			<a href='../qa/list.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>

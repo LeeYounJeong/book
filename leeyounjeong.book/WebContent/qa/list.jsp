@@ -88,15 +88,15 @@
 		<div class='top_menu'>
 			<h5><%= session.getAttribute("LoginId") %>님, 환영합니다 !</h5>
 			<a href='../main.jsp'>로그아웃</a> <span>|</span>
-			<a href='../mypage/01.html'>마이페이지</a> <span>|</span>
-			<a href='../cart/01.html'>장바구니</a> <span>|</span>
-			<a href='../qa/02.html'>고객센터</a> 
+			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
+			<a href='#'>장바구니</a> <span>|</span>
+			<a href='../qa/list.jsp'>고객센터</a> 
 		</div>
 	</div>
 	<br><br>
 
 	<div class='logo'>
-		<a href='../user/02.html'>로고 이미지</a>
+		<a href='../user/loginComplete.jsp'>로고 이미지</a>
 	</div>
 
    <!-- header -->
