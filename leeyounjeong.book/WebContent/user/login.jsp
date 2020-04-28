@@ -7,7 +7,14 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	UserService userService = new UserServiceImpl();
+	
+	String l = request.getParameter("msg0");
+	if(l == null) l = "";
+	
+	String w = request.getParameter("msg7");
+	if(w == null) w = "";
 %>
+
 <!DOCTYPE html>
 <html lang='ko'>
 <head>
@@ -96,7 +103,7 @@
 		<div class='top_menu'>
 			<a href='../user/login.jsp'>로그인</a> <span>|</span>
 			<a href='addUser.jsp'>회원가입</a> <span>|</span>
-			<a href='#'>마이페이지</a> <span>|</span>
+			<a href='../mypage/mypage.jsp'>마이페이지</a> <span>|</span>
 			<a href='#'>장바구니</a> <span>|</span>
 			<a href='#'>고객센터</a> 
 		</div>
@@ -124,11 +131,11 @@
 			<input type='radio' name='member' value="1" checked>회원 &nbsp;&nbsp;&nbsp;
 			<input type='radio' name='member' value="2">관리자<br><br>
 		
-			<p><input type='text' name="userId" id='id' placeholder='아이디' size=30></p>
-			<p><input type='password' name="userPwd" id='pwd'  placeholder='비밀번호' size=30 ></p>
+			<p><input type='text' name="userId" id='id' placeholder='아이디' size=30 required></p>
+			<p><input type='password' name="userPwd" id='pwd'  placeholder='비밀번호' size=30 required></p>
 			<div class='button'>
-				<p><button type='submit' class='btn btn-info' style='width: 220pt' onClick="location.href='longinProc.jsp'">로그인</button></p>
-				<button type='button' class='btn btn-success'style='width: 220pt'  onClick="location.href='addUser.jsp'">회원가입</button>
+				<p><button type='submit' class='btn btn-info' style='width: 220pt' >로그인</button></p>
+				<button type='button' class='btn btn-success'style='width: 220pt'  onClick="location.href='addUser.jsp'">회원가입</button><br><%= l %><%= w %>
 			</div>
 		</form>
 	</div>

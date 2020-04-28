@@ -19,32 +19,38 @@
 	
 	List<User> userIds = userService.listUserIds();
 	List<User> users = userService.listUsers();	
-	
+
 	User user = new User();
 	user = userService.findUser(userId);
 	
-	switch(userType){
-		case 1:
-			if(userId.equals(user.getUserId()) && userPwd.equals(user.getUserPwd())){
-				session.setAttribute("LoginId", userId);
+	if(user != null ){
+		switch(userType){
+			case 1:
+				if(userId.equals(user.getUserId()) && userPwd.equals(user.getUserPwd())){
+					session.setAttribute("LoginId", userId);
 %>			
-				<c:redirect url="../user/loginComplete.jsp"/>
+					<c:redirect url="../user/loginComplete.jsp"/>
 <%
-			}else{
+				}else{
 %>				
-				<c:redirect url="../user/login.jsp"/>
+					<c:redirect url="../user/login.jsp?msg0=Wrong ID or Password"/>
 <%				
-			}	
-			break;
-		case 2:
-			if(userId.equals("admin")){
+				}
+				break;
+			case 2:
+				if(userId.equals("admin")){
 %>			
-				<c:redirect url="../admin/main.jsp"/>
+					<c:redirect url="../admin/main.jsp"/>
 <%				
-			}else{
+				}else{
 %>
-				<c:redirect url="../user/login.jsp"/>
+					<c:redirect url="../user/login.jsp"/>
 <%				
+				}
 		}
+	}else{
+%>					
+					<c:redirect url="../user/login.jsp?msg7=Not exist Id"/>
+<%					
 	}
 %>	

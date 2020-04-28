@@ -26,7 +26,7 @@
 	</insert>
 	
 	<update id="updateUser" parameterType="user">
-		update users
+		update users 
 		set user_name= #{userName} , user_pwd = #{userPwd} , phone_num = #{phoneNum} , address = #{address}
 		where user_id = #{userId}
 	</update>

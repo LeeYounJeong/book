@@ -4,19 +4,44 @@
 <%@ page import="leeyounjeong.book.user.service.UserService" %>
 <%@ page import="leeyounjeong.book.user.service.UserServiceImpl" %>
 <%@ page import="leeyounjeong.book.user.domain.User" %>
+<%@ page import="java.io.PrintWriter" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	UserService userService = new UserServiceImpl();
 	User user = new User();
 	
-	String pwd1 = request.getParameter("pwd1");
-	String pwd2 = request.getParameter("pwd2");
+	String userId = request.getParameter("userId");
+	String userName = request.getParameter("newUserName");
+	String pwd1 = request.getParameter("newPwd1");
+	String pwd2 = request.getParameter("newPwd2");
+	String phoneNum = request.getParameter("newPhoneNum");
+	String address1 = request.getParameter("newAddress1");
+	String address2 = request.getParameter("newAddress2");
+	String address3 = request.getParameter("newAddress3");
+	String address4 = request.getParameter("newAddress4");
+	
+	StringBuffer buff = new StringBuffer(address1);	
+	buff.append(address2);
+	buff.append(address3);
+	buff.append(address4);
+	String address = buff.toString();
+	System.out.printf("%s, %s, %s, %s, %s", userId,userName, pwd1, phoneNum, address);
 	
 	if(pwd1.equals(pwd2)){
-		user.setUserPwd(pwd1);	
+		user.setUserId(userId);
+		user.setUserName(userName);
+		user.setUserPwd(pwd1);
+		user.setPhoneNum(phoneNum);
+		user.setAddress(address);	
+		
+		userService.correctUser(user);
 %>
-	<c:redirect url="correctUser.jsp"/>
+
 <%	
-	}else
+	}else{
 %>
-<!-- 해야될것: 비밀번호가 맞을 때 수정완료를 알리고 수정이 되는것 -->	
+		<c:redirect url="correctProc.jsp?msg5= passwords do not match."/>
+<%
+	}
+%>
+<c:redirect url="correctComplete.jsp"/>
